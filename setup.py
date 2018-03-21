@@ -1,5 +1,6 @@
 
 from skbuild import setup
+import os
 
 setup(
     name = 'qui',
@@ -11,7 +12,7 @@ setup(
     author = "Michael Burisch",
     author_email = "michael.burisch@gmx.com",
     
-    keywords = "camera calibration marker detection",
+    keywords = "qt qml python bindings",
 
     classifiers=[
         "Development Status :: 4 - Beta",

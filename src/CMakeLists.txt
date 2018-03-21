@@ -1,5 +1,7 @@
 
 # General
+include("../BundleQt.cmake")
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -53,24 +55,24 @@ set(HEADERS
     Items.h
     Utility.h)
 
-#file(GLOB SOURCES *.cpp)
-#file(GLOB HEADERS *.h)
 
-
-add_definitions(${NUMPY_DEFINITIONS} )
-include_directories(${PYTHON_INCLUDE_DIR} ${NUMPY_INCLUDE_DIR} ${pybind11_INCLUDE_DIR})
 link_directories(${NUMPY_LIBRARY_DIR})
 
-add_library(qui MODULE ${SOURCES} ${HEADERS})
-set_target_properties(qui PROPERTIES PREFIX "${PYTHON_MODULE_PREFIX}" SUFFIX "${PYTHON_MODULE_EXTENSION}" OUTPUT_NAME "qui_")
-target_link_libraries(qui ${NUMPY_LIBRARIES} pybind11::module Qt5::Quick Qt5::Widgets Qt5::QuickControls2)
+#add_library(qui MODULE ${SOURCES} ${HEADERS})
+#set_target_properties(qui PROPERTIES PREFIX "${PYTHON_MODULE_PREFIX}" SUFFIX "${PYTHON_MODULE_EXTENSION}" OUTPUT_NAME "qui_")
+pybind11_add_module(qui MODULE ${SOURCES} ${HEADERS})
+set_target_properties(qui PROPERTIES OUTPUT_NAME "qui_")
+target_compile_definitions(qui PRIVATE ${NUMPY_DEFINITIONS} )
+target_include_directories(qui PRIVATE ${PYTHON_INCLUDE_DIR} ${NUMPY_INCLUDE_DIR} ${pybind11_INCLUDE_DIR})
+target_link_libraries(qui PRIVATE ${NUMPY_LIBRARIES} pybind11::module Qt5::Quick Qt5::Widgets Qt5::QuickControls2)
+
 
 install(TARGETS qui LIBRARY DESTINATION "qui")
 
-install(SCRIPT "../BundleQt.cmake")
-install(DIRECTORY "${CMAKE_BINARY_DIR}/qt_files/" DESTINATION  "qui")
 
-#include_external_msproject("quiTest" ../quiTest/quiTest.pyproj)
-#set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT "quiTest")
-
-
+if (WIN32)
+  set(BUNDLE_QT TRUE CACHE BOOL "Bundle Qt")
+  if (${BUNDLE_QT})
+    bundle_qt()
+  endif()
+endif()

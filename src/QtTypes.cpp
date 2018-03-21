@@ -191,6 +191,7 @@ void initQtTypes(py::module& m)
 
     py::class_<QCoreApplication, QObject>(m, "QCoreApplication")
         .def(py::init(&applicationConstructor<QCoreApplication>), py::arg("args") = py::list())
+        .def_static("add_library_path", &QCoreApplication::addLibraryPath)
         .def_static("exec", &QCoreApplication::exec)
         ;
 

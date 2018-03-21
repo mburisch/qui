@@ -11,7 +11,6 @@ int initNumPy()
 }
 
 
-
 PYBIND11_MODULE(qui_, m)
 {
     m.doc() = "Qt QML bindings";
