@@ -1,12 +1,12 @@
 # qui
------
+
 Qt QML bindings for Python
 
 This packet allows interaction between QML user interfaces and Python. Therefore, a set of relevant Qt classes are exposed to Python.
 
 
 ## Example
-----------
+
 The following example shows how Python can access QML objects and properties.
 
 example.py
@@ -98,7 +98,7 @@ Item {
 
 
 ## Build
---------
+
 ### Requirements
 Compilation is done using CMake.
 
