@@ -7,7 +7,7 @@ This packet allows interaction between QML user interfaces and Python. Therefore
 
 ## Example
 
-The following example shows how Python can access QML objects and properties.
+The following example shows how Python can access QML objects and properties. Access to object is via objectName as the id property is not accessible.
 
 example.py
 ```
@@ -84,6 +84,7 @@ Item {
             text: "Update image"
         }
 
+        // ImageView is provided by qui. It has a property image of type QImage.
         ImageView {
             id: image
             objectName: "image"
