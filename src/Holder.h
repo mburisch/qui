@@ -76,7 +76,7 @@ private:
 
     template<class T> T failedConversion(bool* ok) const
     {
-        *ok = true;
+        *ok = false;
         return T{};
     }
 
