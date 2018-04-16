@@ -7,7 +7,7 @@ This packet allows interaction between QML user interfaces and Python. Therefore
 
 ## Example
 
-The following example shows how Python can access QML objects and properties. Access to object is via objectName as the id property is not accessible.
+The following example shows how Python can access QML objects and properties. Access to object is via objectName as the id property is not accessible. All properties, signals and slots of QObject types are accessible. 
 
 example.py
 ```
