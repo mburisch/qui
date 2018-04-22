@@ -54,6 +54,8 @@ The easiest way to install qui is via pip
 pip install qui
 ```
 
+## Manual build
+
 ### Requirements
 Compilation is done using CMake.
 
@@ -70,8 +72,7 @@ Furthermore, the following Python packages are required for building:
 pip install scikit-build
 ```
 
-
-### Manual Build
+## Build steps
 1) Make sure cmake and python are found on the path 
 ```
 set PATH=c:\path\to\cmake\bin;c:\path\to\python;%PATH%
