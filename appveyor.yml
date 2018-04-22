@@ -34,15 +34,6 @@ environment:
     - PYTHON: "C:\\Python35"
       QT: "%QT_32%"
       GENERATOR: "%GENERATOR_32%"      
-      
-    # Python 3.4
-    - PYTHON: "C:\\Python34-x64"
-      QT: "%QT_64%"
-      GENERATOR: "%GENERATOR_64%"
-      
-    - PYTHON: "C:\\Python34"
-      QT: "%QT_32%"
-      GENERATOR: "%GENERATOR_32%"          
 
 install:  
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
