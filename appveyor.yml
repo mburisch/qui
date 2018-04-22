@@ -11,7 +11,7 @@ environment:
     QT_32: "C:\\Qt\\5.10.1\\msvc2015"
     QT_64: "C:\\Qt\\5.10.1\\msvc2017_64"
     GENERATOR_32: "Visual Studio 15 2017"
-    GENERATOR_32: "Visual Studio 15 2017 Win64"
+    GENERATOR_64: "Visual Studio 15 2017 Win64"
     TWINE_USERNAME: mgb
     TWINE_PASSWORD:
       secure: 0nIEPxdiNLL2Hc+LQXJfCQ==
