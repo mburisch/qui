@@ -8,13 +8,23 @@ platform: x64
 
 environment:
   global:
-    CMAKE_PREFIX_PATH: C:\Qt\5.10.1\msvc2017_64
+    QT_32: C:\Qt\5.10.1\msvc2015_64
+    QT_64: C:\Qt\5.10.1\msvc2017_64
+    TWINE_USERNAME: mgb
+    TWINE_PASSWORD:
+      secure: 0nIEPxdiNLL2Hc+LQXJfCQ==
     
   matrix:
-    - PYTHON: "C:\\Python36-x64"
+    #- PYTHON: "C:\\Python36-x64"
+    #  QT: %QT_64%
+      
+    - PYTHON: "C:\\Python36"
+      QT: %QT_32%
+      
 
 install:  
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "SET CMAKE_PREFIX_PATH=%QT%
   - "python --version"
   - "pip install scikit-build"
   - "pip install numpy"
@@ -22,9 +32,6 @@ install:
 build_script:
   - python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
  
-deploy: off
- 
+deploy: no
 #deploy_script:
-#- cmd: twine upload dist/*
-
- #call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+#  - twine upload dist/*
