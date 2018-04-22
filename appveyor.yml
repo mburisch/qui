@@ -7,11 +7,20 @@ configuration: Release
 platform: x64
 
 environment:
-  CMAKE_PREFIX_PATH: C:\Qt\5.10.1\msvc2017_64
-  PATH: %PATH%;C:\Python36-x64
+  global:
+    CMAKE_PREFIX_PATH: C:\Qt\5.10.1\msvc2017_64
+    
+  matrix:
+    - PYTHON: "C:\\Python36-x64"
+
+install:  
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "python --version"
+  - "pip install scikit-build"
+  - "pip install numpy"
   
 build_script:
-- cmd: python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
+  - python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
  
 deploy: off
  
