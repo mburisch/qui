@@ -2,9 +2,9 @@ version: 1.0.{build}
 build:
   verbosity: minimal
 
-image: Visual Studio 2017
 configuration: Release
-platform: x64
+#image: Visual Studio 2017
+#platform: x64
 
 environment:
   global:
@@ -17,14 +17,32 @@ environment:
       secure: 0nIEPxdiNLL2Hc+LQXJfCQ==
     
   matrix:
-    #- PYTHON: "C:\\Python36-x64"
-    #  QT: %QT_64%
-    # GENERATOR: "%GENERATOR_64%"
+    # Python 3.6
+    - PYTHON: "C:\\Python36-x64"
+      QT: %QT_64%
+     GENERATOR: "%GENERATOR_64%"
       
     - PYTHON: "C:\\Python36"
       QT: "%QT_32%"
       GENERATOR: "%GENERATOR_32%"
       
+    # Python 3.5
+    - PYTHON: "C:\\Python35-x64"
+      QT: %QT_64%
+     GENERATOR: "%GENERATOR_64%"
+      
+    - PYTHON: "C:\\Python35"
+      QT: "%QT_32%"
+      GENERATOR: "%GENERATOR_32%"      
+      
+    # Python 3.4
+    - PYTHON: "C:\\Python34-x64"
+      QT: %QT_64%
+     GENERATOR: "%GENERATOR_64%"
+      
+    - PYTHON: "C:\\Python34"
+      QT: "%QT_32%"
+      GENERATOR: "%GENERATOR_32%"          
 
 install:  
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
@@ -32,14 +50,13 @@ install:
   - "python --version"
   - "pip install scikit-build"
   - "pip install numpy"
+  - "pip install twine"
   
 build_script:
-  #- python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
-  - python setup.py bdist_wheel -G "%GENERATOR%" -- -DBUNDLE_QT=FALSE
+  - python setup.py bdist_wheel -G "%GENERATOR%" 
  
 artifacts:
   - path: "dist/*.whl"
      
-deploy: no
-#deploy_script:
-#  - twine upload dist/*
+deploy_script:
+  - twine upload dist/*
