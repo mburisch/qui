@@ -17,9 +17,11 @@ environment:
   matrix:
     #- PYTHON: "C:\\Python36-x64"
     #  QT: %QT_64%
+    #  GENERATOR 
       
     - PYTHON: "C:\\Python36"
-      QT: "C:\\Qt\\5.10.1\\msvc2015"
+      QT: "%QT_32%"
+      GENERATOR: "Visual Studio 15 2017"
       
 
 install:  
@@ -31,7 +33,11 @@ install:
   
 build_script:
   #- python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
-  - python setup.py bdist_wheel -G "Visual Studio 15 2017" 
+  - python setup.py bdist_wheel -G "%GENERATOR%" 
+ 
+artifacts:
+  - path: dist
+    name: "qui"
  
 deploy: no
 #deploy_script:
