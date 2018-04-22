@@ -2,8 +2,8 @@ version: 1.0.{build}
 build:
   verbosity: minimal
 
+image: Visual Studio 2017
 configuration: Release
-#image: Visual Studio 2017
 #platform: x64
 
 environment:
