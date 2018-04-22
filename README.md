@@ -9,6 +9,44 @@ This packet allows interaction between QML user interfaces and Python. Therefore
 
 The following example shows how Python can access QML objects and properties. Access to object is via objectName as the id property is not accessible. All properties, signals and slots of QObject types are accessible. 
 
+### Simple Example
+simple.py
+```
+import qui
+import numpy as np
+
+app = qui.QApplication()
+
+def show_click():
+    print("Button clicked)
+
+view = qui.QQuickView("example.qml")
+view.show()
+root = view.root_object()
+root.btn.clicked.connect(show_click)
+app.exec()
+
+```
+
+simple.qml
+```
+import QtQuick 2.8
+import QtQuick.Controls 1.4
+import QtQuick.Layouts 1.3
+import qui 1.0
+
+Item {
+    id: root
+    
+     Button {
+         objectName: "btn"
+         text: "Add"
+     }
+}
+```
+
+### Advanced Example
+
 example.py
 ```
 import qui
