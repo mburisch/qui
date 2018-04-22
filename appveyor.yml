@@ -19,8 +19,8 @@ environment:
   matrix:
     # Python 3.6
     - PYTHON: "C:\\Python36-x64"
-      QT: %QT_64%
-     GENERATOR: "%GENERATOR_64%"
+      QT: "%QT_64%"
+      GENERATOR: "%GENERATOR_64%"
       
     - PYTHON: "C:\\Python36"
       QT: "%QT_32%"
@@ -28,8 +28,8 @@ environment:
       
     # Python 3.5
     - PYTHON: "C:\\Python35-x64"
-      QT: %QT_64%
-     GENERATOR: "%GENERATOR_64%"
+      QT: "%QT_64%"
+      GENERATOR: "%GENERATOR_64%"
       
     - PYTHON: "C:\\Python35"
       QT: "%QT_32%"
@@ -37,8 +37,8 @@ environment:
       
     # Python 3.4
     - PYTHON: "C:\\Python34-x64"
-      QT: %QT_64%
-     GENERATOR: "%GENERATOR_64%"
+      QT: "%QT_64%"
+      GENERATOR: "%GENERATOR_64%"
       
     - PYTHON: "C:\\Python34"
       QT: "%QT_32%"
