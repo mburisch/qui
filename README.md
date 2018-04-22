@@ -72,7 +72,7 @@ Furthermore, the following Python packages are required for building:
 pip install scikit-build
 ```
 
-## Build steps
+### Build steps
 1) Make sure cmake and python are found on the path 
 ```
 set PATH=c:\path\to\cmake\bin;c:\path\to\python;%PATH%
