@@ -4,7 +4,7 @@ import os
 
 setup(
     name = 'qui',
-    version = '1.0.0',
+    version = '1.0.1',
     description = "Qt QML bindings",
     long_description = "Bindings for QML part of Qt", 
 
