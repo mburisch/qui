@@ -19,7 +19,7 @@ environment:
     #  QT: %QT_64%
       
     - PYTHON: "C:\\Python36"
-      QT: %QT_32%
+      QT: "%QT_32%"
       
 
 install:  
