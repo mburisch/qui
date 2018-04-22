@@ -24,7 +24,7 @@ environment:
 
 install:  
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
-  - "SET CMAKE_PREFIX_PATH=%QT%
+  - "SET CMAKE_PREFIX_PATH=%QT%"
   - "python --version"
   - "pip install scikit-build"
   - "pip install numpy"
