@@ -1,4 +1,4 @@
-
+# Copy the required Qt files for integration into the wheel.
 
 function(bundle_qt)
   file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/qt_files")

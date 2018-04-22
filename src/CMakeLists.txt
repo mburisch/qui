@@ -1,12 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
 
 # General
-include("../BundleQt.cmake")
+include("../cmake/BundleQt.cmake")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(pybind11 CONFIG REQUIRED)
+#find_package(pybind11 CONFIG REQUIRED)
+include("../cmake/pybind.cmake")
+
+
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5Qml REQUIRED)

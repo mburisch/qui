@@ -1,0 +1,21 @@
+version: 1.0.1
+build:
+  verbosity: minimal
+
+image: Visual Studio 2017
+configuration: Release
+platform: x64
+
+environment:
+  CMAKE_PREFIX_PATH: C:\Qt\5.10.1\msvc2017_64
+  PATH: C:\Python36-x64
+  
+build_script:
+- cmd: python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
+ 
+deploy: off
+ 
+#deploy_script:
+#- cmd: twine upload dist/*
+
+ #call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
