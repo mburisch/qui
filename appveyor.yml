@@ -8,7 +8,7 @@ platform: x64
 
 environment:
   global:
-    QT_32: "C:\\Qt\\5.10.1\\msvc2015_64"
+    QT_32: "C:\\Qt\\5.10.1\\msvc2015"
     QT_64: "C:\\Qt\\5.10.1\\msvc2017_64"
     TWINE_USERNAME: mgb
     TWINE_PASSWORD:
@@ -19,7 +19,7 @@ environment:
     #  QT: %QT_64%
       
     - PYTHON: "C:\\Python36"
-      QT: "C:\\Qt\\5.10.1\\msvc2015_64"
+      QT: "C:\\Qt\\5.10.1\\msvc2015"
       
 
 install:  
@@ -30,7 +30,8 @@ install:
   - "pip install numpy"
   
 build_script:
-  - python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
+  #- python setup.py bdist_wheel -G "Visual Studio 15 2017 Win64" 
+  - python setup.py bdist_wheel -G "Visual Studio 15 2017" 
  
 deploy: no
 #deploy_script:
