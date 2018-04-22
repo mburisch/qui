@@ -19,7 +19,7 @@ environment:
     #  QT: %QT_64%
       
     - PYTHON: "C:\\Python36"
-      QT: "%QT_32%"
+      QT: "C:\Qt\5.10.1\msvc2015_64"
       
 
 install:  
