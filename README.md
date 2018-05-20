@@ -17,7 +17,7 @@ import numpy as np
 app = qui.QApplication()
 
 def show_click():
-    print("Button clicked)
+    print("Button clicked")
 
 view = qui.QQuickView("example.qml")
 view.show()
